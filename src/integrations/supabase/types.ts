@@ -14,13 +14,231 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      application_animals: {
+        Row: {
+          application_id: string | null
+          bull_number: string | null
+          id: string
+          inj: string
+        }
+        Insert: {
+          application_id?: string | null
+          bull_number?: string | null
+          id?: string
+          inj: string
+        }
+        Update: {
+          application_id?: string | null
+          bull_number?: string | null
+          id?: string
+          inj?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "application_animals_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      applications: {
+        Row: {
+          address_akimat: string | null
+          address_district: string | null
+          address_region: string | null
+          application_number: string | null
+          created_at: string | null
+          farm_type: string | null
+          has_iszh: boolean | null
+          has_land: boolean | null
+          has_no_debt: boolean | null
+          has_prev_subsidy: boolean | null
+          head_count: number | null
+          id: string
+          iin_bin: string | null
+          met_obligations: boolean | null
+          normative: number | null
+          prev_subsidy_used: boolean | null
+          producer_name: string | null
+          status: string | null
+          submitted_at: string | null
+          subsidy_direction: string | null
+          subsidy_name: string | null
+          total_amount: number | null
+          user_id: string | null
+        }
+        Insert: {
+          address_akimat?: string | null
+          address_district?: string | null
+          address_region?: string | null
+          application_number?: string | null
+          created_at?: string | null
+          farm_type?: string | null
+          has_iszh?: boolean | null
+          has_land?: boolean | null
+          has_no_debt?: boolean | null
+          has_prev_subsidy?: boolean | null
+          head_count?: number | null
+          id?: string
+          iin_bin?: string | null
+          met_obligations?: boolean | null
+          normative?: number | null
+          prev_subsidy_used?: boolean | null
+          producer_name?: string | null
+          status?: string | null
+          submitted_at?: string | null
+          subsidy_direction?: string | null
+          subsidy_name?: string | null
+          total_amount?: number | null
+          user_id?: string | null
+        }
+        Update: {
+          address_akimat?: string | null
+          address_district?: string | null
+          address_region?: string | null
+          application_number?: string | null
+          created_at?: string | null
+          farm_type?: string | null
+          has_iszh?: boolean | null
+          has_land?: boolean | null
+          has_no_debt?: boolean | null
+          has_prev_subsidy?: boolean | null
+          head_count?: number | null
+          id?: string
+          iin_bin?: string | null
+          met_obligations?: boolean | null
+          normative?: number | null
+          prev_subsidy_used?: boolean | null
+          producer_name?: string | null
+          status?: string | null
+          submitted_at?: string | null
+          subsidy_direction?: string | null
+          subsidy_name?: string | null
+          total_amount?: number | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "applications_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      expert_reviews: {
+        Row: {
+          application_id: string | null
+          comment: string | null
+          created_at: string | null
+          decision: string | null
+          expert_id: string | null
+          id: string
+        }
+        Insert: {
+          application_id?: string | null
+          comment?: string | null
+          created_at?: string | null
+          decision?: string | null
+          expert_id?: string | null
+          id?: string
+        }
+        Update: {
+          application_id?: string | null
+          comment?: string | null
+          created_at?: string | null
+          decision?: string | null
+          expert_id?: string | null
+          id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "expert_reviews_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "applications"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "expert_reviews_expert_id_fkey"
+            columns: ["expert_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string | null
+          full_name: string | null
+          id: string
+          iin_bin: string | null
+          phone: string | null
+          role: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          full_name?: string | null
+          id: string
+          iin_bin?: string | null
+          phone?: string | null
+          role?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          full_name?: string | null
+          id?: string
+          iin_bin?: string | null
+          phone?: string | null
+          role?: string | null
+        }
+        Relationships: []
+      }
+      subsidy_history: {
+        Row: {
+          application_id: string | null
+          id: string
+          inj: string
+          paid_amount: number | null
+          status: string | null
+          year: number
+        }
+        Insert: {
+          application_id?: string | null
+          id?: string
+          inj: string
+          paid_amount?: number | null
+          status?: string | null
+          year: number
+        }
+        Update: {
+          application_id?: string | null
+          id?: string
+          inj?: string
+          paid_amount?: number | null
+          status?: string | null
+          year?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "subsidy_history_application_id_fkey"
+            columns: ["application_id"]
+            isOneToOne: false
+            referencedRelation: "applications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_user_role: { Args: { user_id: string }; Returns: string }
     }
     Enums: {
       [_ in never]: never
