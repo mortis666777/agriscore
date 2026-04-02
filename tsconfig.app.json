@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b12030bfe21ea5be66670842c71d66d194d1771f93f0b8c076e97c867b4b0552
-size 680
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["vite/client"]
+  }
+}
