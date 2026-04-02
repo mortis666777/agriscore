@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5f53401050dd506889ea09592c79186645d0e1d33ed08dddeb9dff46b8e539d
-size 2978
+{
+  "name": "agriscore",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
