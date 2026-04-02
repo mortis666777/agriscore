@@ -3,7 +3,7 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "ESNext"],
-    "module": "ESNext",
+    "types": ["node"],    "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
