@@ -2,8 +2,7 @@
   "name": "agriscore",
   "version": "1.0.0",
   "private": true,
-"type": "module",
-
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
@@ -14,8 +13,12 @@
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^25.5.0",
     "@vitejs/plugin-react": "^6.0.1",
-    "vite": "^5.0.0"
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.3"
   }
 }
